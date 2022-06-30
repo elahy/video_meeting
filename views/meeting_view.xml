@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="view_meeting_tree" model="ir.ui.view">
+        <field name="name">video.meeting.tree</field>
+        <field name="model">video.meeting</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="host"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="view_meeting_form" model="ir.ui.view">
+        <field name="name">video.meeting.form</field>
+        <field name="model">video.meeting</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" string="Meeting Title"/>
+                        <h1>
+                            <field name="name" default_focus="1" placeholder="e.g. Business Meeting"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="host"/>
+                            <field name="channel"/>
+                        </group>
+                        <group>
+                            <field name="tag_ids" widget="many2many_tags"/>
+                            <button name="action_whiteboard" string="Start Whiteboard" type="object"
+                                    help="On clicking this button you will be redirected to WhiteBoard"
+                                    confirm="Open Whiteboard in New Window?" class="oe_highlight"
+                                    groups="base.group_no_one"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Class Schedules" name="schedule">
+                            <field name="schedule_ids">
+                                <tree editable="bottom">
+                                    <field name="name"/>
+                                    <field name="teacher_id" widget="many2one_avatar_user"/>
+                                    <field name="appointment_time" optional="show"/>
+                                    <field name="duration"/>
+                                    <button name="action_test" string="Open Meeting" type="object"
+                                            help="On clicking this button you will be redirected to Meeting Page"
+                                            confirm="Are sure to redirect to meeting channel?" class="oe_highlight"
+                                            groups="base.group_no_one"/>
+                                </tree>
+                                <form>
+                                    <group>
+                                        <group>
+                                            <field name="name"/>
+                                            <field name="teacher_id" widget="many2one_avatar"/>
+                                            <field name="duration"/>
+                                        </group>
+                                        <group>
+                                            <field name="appointment_time"/>
+                                            <button name="action_test" string="Open Meeting" type="object"
+                                                    help="On clicking this button you will be redirected to Meeting Page"
+                                                    confirm="Open Meeting Page in New Window?" class="oe_highlight"
+                                                    groups="base.group_no_one"/>
+                                        </group>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <!-- Chatter -->
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" groups="base.group_user"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_meeting" model="ir.actions.act_window">
+        <field name="name">Meetings</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">video.meeting</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first meeting !
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_vidmeet_meeting"
+              name="Meeting Details"
+              parent="menu_meeting_master"
+              action="action_meeting"
+              groups=""
+              sequence="10"/>
+</odoo>
