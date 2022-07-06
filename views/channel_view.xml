@@ -44,10 +44,10 @@
         </field>
     </record>
 
-    <menuitem id="menu_olclass_participant"
-              name="Channel Details"
-              parent="menu_channel_master"
+    <menuitem id="menu_vidmeet_participant"
+              name="Channels"
+              parent="menu_vidmeet_root"
               action="action_participant"
               groups=""
-              sequence="10"/>
+              sequence="0"/>
 </odoo>

@@ -1,6 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access.video.meeting,access_video_meeting,video_meeting.model_video_meeting,base.group_user,1,1,1,1
-access.olclass.schedule,access_olclass_schedule,video_meeting.model_olclass_schedule,base.group_user,1,1,1,1
-access.olclass.channel,access_olclass_channel,video_meeting.model_olclass_channel,base.group_user,1,1,1,1
-access.olclass.configuration,access_olclass_configuration,video_meeting.model_olclass_configuration,base.group_user,1,1,1,1
 access.meeting.tag,access_meeting_tag,video_meeting.model_meeting_tag,base.group_user,1,1,1,1

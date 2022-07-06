@@ -13,7 +13,7 @@ class OlclassSchedule(models.Model):
     name = fields.Char(string='Topic', required=True)
     appointment_time = fields.Datetime(string='Schedule Time', tracking=True, required=True,
                                        default=fields.Datetime.now)
-    teacher_id = fields.Many2one('res.users', string='Teacher')
+    host_id = fields.Many2one('res.users', string='Host')
     duration = fields.Float(string="Duration")
     course_id = fields.Many2one('olclass.course', string='Course')
     channel_id = fields.Char(string="Channel Id", related='course_id.channel_id')

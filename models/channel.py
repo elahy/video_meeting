@@ -2,10 +2,10 @@ from odoo import api, fields, models, _
 from odoo.exceptions import ValidationError
 
 
-class OlclassChannel(models.Model):
-    _name = "olclass.channel"
+class VidMeetChannel(models.Model):
+    _name = "vidmeet.channel"
     _inherit = []
-    _description = "Online Class Channel"
+    _description = "Video Meeting Channel"
     _order = 'id'
 
     name = fields.Char(string='Name', default='New')

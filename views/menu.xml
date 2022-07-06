@@ -8,26 +8,26 @@
               groups=""
               sequence="-11"/>
 
-    <menuitem id="menu_meeting_master"
-              name="Meetings"
-              parent="menu_vidmeet_root"
-              action=""
-              groups=""
-              sequence="0"/>
+<!--    <menuitem id="menu_meeting_master"-->
+<!--              name="Meetings"-->
+<!--              parent="menu_vidmeet_root"-->
+<!--              action=""-->
+<!--              groups=""-->
+<!--              sequence="0"/>-->
 
-    <menuitem id="menu_channel_master"
-              name="Channels"
-              parent="menu_vidmeet_root"
-              action=""
-              groups=""
-              sequence="1"/>
+<!--    <menuitem id="menu_channel_master"-->
+<!--              name="Channels"-->
+<!--              parent="menu_vidmeet_root"-->
+<!--              action=""-->
+<!--              groups=""-->
+<!--              sequence="1"/>-->
 
-    <menuitem id="menu_participant_master"
-              name="Participants"
-              parent="menu_vidmeet_root"
-              action=""
-              groups=""
-              sequence="1"/>
+<!--    <menuitem id="menu_participant_master"-->
+<!--              name="Participants"-->
+<!--              parent="menu_vidmeet_root"-->
+<!--              action=""-->
+<!--              groups=""-->
+<!--              sequence="1"/>-->
 
     <menuitem id="menu_configuration_master"
               name="Configurations"

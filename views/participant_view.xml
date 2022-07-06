@@ -44,8 +44,8 @@
     </record>
 
     <menuitem id="menu_olclass_participant"
-              name="Participant Details"
-              parent="menu_participant_master"
+              name="Participants"
+              parent="menu_vidmeet_root"
               action="action_participant"
               groups=""
               sequence="10"/>

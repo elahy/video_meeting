@@ -41,3 +41,12 @@ class VideoMeeting(models.Model):
             'target': 'new',
             'url': 'https://webwhiteboard.com/'
         }
+
+    def action_test(self):
+        print(self.channel_id)
+        return {
+            'type': 'ir.actions.act_url',
+            'target': 'new',
+            # 'url': f'/web#cids=1&menu_id=84&default_active_id=mail.box_inbox&action=116&active_id=mail.channel_{self.channel_id}'
+            'url': f'/web#cids=1&default_active_id=mail.box_inbox&action=104&menu_id=75&active_id=mail.channel_{self.channel_id}'
+        }
