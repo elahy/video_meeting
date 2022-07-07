@@ -1,13 +1,10 @@
 from odoo import api, fields, models, _
 
 
-# from odoo.exceptions import ValidationError
-
-
-class OlclassSchedule(models.Model):
-    _name = "olclass.schedule"
+class VidMeetSchedule(models.Model):
+    _name = "vidmeet.schedule"
     _inherit = ['mail.thread', 'mail.activity.mixin']
-    _description = "Online Class Schedule"
+    _description = "Video Meeting Schedule"
     _order = 'id desc'
 
     name = fields.Char(string='Topic', required=True)
@@ -15,7 +12,6 @@ class OlclassSchedule(models.Model):
                                        default=fields.Datetime.now)
     host_id = fields.Many2one('res.users', string='Host')
     duration = fields.Float(string="Duration")
-    course_id = fields.Many2one('olclass.course', string='Course')
     channel_id = fields.Char(string="Channel Id", related='course_id.channel_id')
 
     def action_test(self):
@@ -25,8 +21,3 @@ class OlclassSchedule(models.Model):
             'target': 'new',
             'url': f'/web#cids=1&menu_id=84&default_active_id=mail.box_inbox&action=116&active_id=mail.channel_{self.channel_id}'
         }
-
-    @api.onchange('course_id')
-    def course_id_onchange(self):
-        if self.course_id:
-            self.channel_id = self.course_id.channel_id
