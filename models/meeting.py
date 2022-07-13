@@ -13,7 +13,6 @@ class VideoMeeting(models.Model):
     meeting_details = fields.Text(string='Description')
     host = fields.Many2one('res.users', string='Host')
     tag_ids = fields.Many2many('course.tag', string='Tags')
-    schedule_ids = fields.One2many('olclass.schedule', 'course_id', string='Class Schedules')
     channel = fields.Many2one('mail.channel', string='Channel')
     channel_id = fields.Char(string="Channel Id", compute='_compute_channel_id')
     number_of_attendees = fields.Integer(string="Number Of Attendees", compute='_compute_number_of_attendees')

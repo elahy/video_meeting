@@ -1,3 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access.video.meeting,access_video_meeting,video_meeting.model_video_meeting,base.group_user,1,1,1,1
+access.vidmeet.participant,access_vidmeet_participant,video_meeting.model_vidmeet_participant,base.group_user,1,1,1,1
+access.vidmeet.configuration,access_vidmeet_configuration,video_meeting.model_vidmeet_configuration,base.group_user,1,1,1,1
 access.meeting.tag,access_meeting_tag,video_meeting.model_meeting_tag,base.group_user,1,1,1,1

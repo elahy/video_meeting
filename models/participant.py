@@ -3,9 +3,9 @@ from odoo.exceptions import ValidationError
 
 
 class OlclassParticipant(models.Model):
-    _name = "olclass.participant"
+    _name = "vidmeet.participant"
     _inherit = []
-    _description = "Online Class Participant"
+    _description = "Video Meeting Participant"
     _order = 'id'
 
     name = fields.Char(string='Name', default='New')

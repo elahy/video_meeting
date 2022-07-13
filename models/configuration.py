@@ -3,7 +3,7 @@ from odoo.exceptions import ValidationError
 
 
 class OlclassConfiguration(models.Model):
-    _name = "olclass.configuration"
+    _name = "vidmeet.configuration"
     _inherit = []
     _description = "Online Class Configuration"
     _order = 'id'
